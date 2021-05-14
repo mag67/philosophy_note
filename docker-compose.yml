@@ -19,9 +19,9 @@ services:
     environment:
       POSTGRES_ROOT_PASSWORD: *postgres_password
     ports:
-      - 3000:3000
+      - 4000:4000
     volumes:
-      - .:/api
+      - ./api:/api
       - node_volume:/api/node_modules
     working_dir: /api
     depends_on:
@@ -32,7 +32,7 @@ services:
     working_dir: /frontend
     command: yarn start
     ports:
-      - 4000:3000
+      - 3000:3000
     volumes:
       - ./frontend:/frontend
     depends_on:
